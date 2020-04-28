@@ -1,0 +1,3 @@
+services:
+    RM\Standard\Message\Format\JsonMessageFormatter:
+        public: false

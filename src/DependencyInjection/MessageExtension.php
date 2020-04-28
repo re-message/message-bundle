@@ -16,8 +16,12 @@
 
 namespace RM\Bundle\MessageBundle\DependencyInjection;
 
+use Exception;
+use RM\Standard\Message\Format\MessageFormatterInterface;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
  * Class MessageExtension
@@ -29,10 +33,21 @@ class MessageExtension extends Extension
 {
     /**
      * @inheritDoc
+     * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
-        $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('formatters.yaml');
+
+        $formatter = $config['formatter'];
+        if ($container->has($formatter)) {
+            $container->setAlias(MessageFormatterInterface::class, $formatter);
+        } else {
+            $container->register(MessageFormatterInterface::class, $formatter);
+        }
     }
 }
