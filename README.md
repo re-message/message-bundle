@@ -7,4 +7,4 @@ This package provides integrations for the introduced services in the `relmsg/me
 
 ## Requirements
 
-0. PHP 7.4+
+1. PHP 7.4+
