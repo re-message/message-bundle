@@ -1,0 +1,17 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    _instanceof:
+        RM\Standard\Message\Serializer\MessageSerializerInterface:
+            tags: [!php/const RM\Bundle\MessageBundle\MessageBundle::SERIALIZER_TAG]
+
+    RM\Standard\Message\Serializer\MessageSerializerInterface:
+        public: true
+        alias: RM\Standard\Message\Serializer\ChainMessageSerializer
+    RM\Standard\Message\Serializer\ChainMessageSerializer: null
+    RM\Standard\Message\Serializer\ActionSerializer: null
+    RM\Standard\Message\Serializer\ResponseSerializer: null
+    RM\Standard\Message\Serializer\ErrorSerializer: null

@@ -16,6 +16,8 @@
 
 namespace RM\Bundle\MessageBundle;
 
+use RM\Bundle\MessageBundle\DependencyInjection\Compiler\SerializerCompilerPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -27,4 +29,13 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class MessageBundle extends Bundle
 {
     public const NAME = 'message';
+    public const SERIALIZER_TAG = self::NAME . '.serializer';
+
+    /**
+     * @inheritDoc
+     */
+    public function build(ContainerBuilder $container): void
+    {
+        $container->addCompilerPass(new SerializerCompilerPass());
+    }
 }

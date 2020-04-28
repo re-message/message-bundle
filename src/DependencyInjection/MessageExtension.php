@@ -42,6 +42,7 @@ class MessageExtension extends Extension
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('formatters.yaml');
+        $loader->load('serializers.yaml');
 
         $formatter = $config['formatter'];
         if ($container->has($formatter)) {
