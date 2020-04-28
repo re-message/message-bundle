@@ -3,25 +3,22 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.0/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         executionOrder="depends,defects"
-         forceCoversAnnotation="true"
-         beStrictAboutCoversAnnotation="true"
-         beStrictAboutOutputDuringTests="true"
-         beStrictAboutTodoAnnotatedTests="true"
+         backupGlobals="false"
+         colors="true"
          verbose="true">
 
     <php>
-        <ini name="error_reporting" value="-1" />
-        <server name="APP_ENV" value="test" force="true" />
-        <server name="SHELL_VERBOSITY" value="-1" />
-        <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
-        <server name="SYMFONY_PHPUNIT_VERSION" value="9.0" />
+        <ini name="error_reporting" value="-1"/>
+        <server name="APP_ENV" value="test" force="true"/>
+        <server name="SHELL_VERBOSITY" value="-1"/>
+        <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
+        <server name="SYMFONY_PHPUNIT_VERSION" value="9.0"/>
         <env name="KERNEL_CLASS" value="\RM\Bundle\MessageBundle\Tests\Kernel"/>
     </php>
 
     <testsuites>
-        <testsuite name="default">
-            <directory suffix="Test.php">Tests</directory>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
@@ -34,7 +31,7 @@
     <logging>
         <log type="coverage-text" target="php://stdout"/>
         <log type="coverage-clover" target="coverage/clover.xml"/>
-        <log type="coverage-html" target="coverage/report" />
+        <log type="coverage-html" target="coverage/report"/>
     </logging>
 
     <listeners>
