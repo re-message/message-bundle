@@ -30,4 +30,10 @@
             <directory suffix=".php">./</directory>
         </whitelist>
     </filter>
+
+    <logging>
+        <log type="coverage-text" target="php://stdout"/>
+        <log type="coverage-clover" target="coverage/clover.xml"/>
+        <log type="coverage-html" target="coverage/report" />
+    </logging>
 </phpunit>
