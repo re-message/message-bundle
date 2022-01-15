@@ -26,8 +26,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 /**
  * Class AutowiringTest
  *
- * @package RM\Bundle\MessageBundle\Tests\DependencyInjection
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class AutowiringTest extends WebTestCase
 {

@@ -24,8 +24,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 /**
  * Class Configuration
  *
- * @package RM\Bundle\MessageBundle\DependencyInjection
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class Configuration implements ConfigurationInterface
 {

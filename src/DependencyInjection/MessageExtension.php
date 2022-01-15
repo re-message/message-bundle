@@ -26,8 +26,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 /**
  * Class MessageExtension
  *
- * @package RM\Bundle\MessageBundle\DependencyInjection
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class MessageExtension extends Extension
 {

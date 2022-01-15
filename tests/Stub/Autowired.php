@@ -22,8 +22,7 @@ use RM\Standard\Message\Serializer\MessageSerializerInterface;
 /**
  * Class Autowired
  *
- * @package RM\Bundle\MessageBundle\Tests\Stub
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class Autowired
 {

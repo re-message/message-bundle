@@ -24,8 +24,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 /**
  * Class TestCase
  *
- * @package RM\Bundle\MessageBundle\Tests
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 abstract class TestCase extends WebTestCase
 {

@@ -27,8 +27,7 @@ use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 /**
  * Class Kernel
  *
- * @package RM\Bundle\MessageBundle\Tests
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class Kernel extends BaseKernel
 {

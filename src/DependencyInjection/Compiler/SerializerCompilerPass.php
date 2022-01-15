@@ -25,7 +25,6 @@ use Symfony\Component\DependencyInjection\Reference;
 /**
  * Class SerializerCompilerPass
  *
- * @package RM\Bundle\MessageBundle\DependencyInjection\Compiler
  * @author  Oleg Kozlov <h1karo@relmsg.ru>
  */
 class SerializerCompilerPass implements CompilerPassInterface

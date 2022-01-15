@@ -23,8 +23,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * Class MessageBundle
  *
- * @package RM\Bundle\MessageBundle
- * @author  Oleg Kozlov <h1karo@relmsg.ru>
+ * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class MessageBundle extends Bundle
 {
