@@ -1,12 +1,12 @@
 <?php
-/**
+/*
  * This file is a part of Relations Messenger Message Standard Bundle.
  * This package is a part of Relations Messenger.
  *
  * @link      https://github.com/relmsg/message-bundle
  * @link      https://dev.relmsg.ru/packages/message-bundle
- * @copyright Copyright (c) 2018-2020 Relations Messenger
- * @author    h1karo <h1karo@outlook.com>
+ * @copyright Copyright (c) 2018-2022 Relations Messenger
+ * @author    Oleg Kozlov <h1karo@relmsg.ru>
  * @license   Apache License 2.0
  * @license   https://legal.relmsg.ru/licenses/message-bundle
  *
@@ -28,7 +28,7 @@ use Symfony\Component\HttpKernel\Kernel as BaseKernel;
  * Class Kernel
  *
  * @package RM\Bundle\MessageBundle\Tests
- * @author  h1karo <h1karo@outlook.com>
+ * @author  Oleg Kozlov <h1karo@relmsg.ru>
  */
 class Kernel extends BaseKernel
 {
