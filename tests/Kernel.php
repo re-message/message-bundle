@@ -45,7 +45,7 @@ class Kernel extends BaseKernel
     /**
      * @inheritDoc
      */
-    public function registerBundles()
+    public function registerBundles(): iterable
     {
         return [
             new FrameworkBundle(),
