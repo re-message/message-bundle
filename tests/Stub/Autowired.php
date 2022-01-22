@@ -20,8 +20,6 @@ use RM\Standard\Message\Format\MessageFormatterInterface;
 use RM\Standard\Message\Serializer\MessageSerializerInterface;
 
 /**
- * Class Autowired
- *
  * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class Autowired

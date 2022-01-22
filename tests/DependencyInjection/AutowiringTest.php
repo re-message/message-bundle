@@ -24,8 +24,6 @@ use RM\Standard\Message\Serializer\MessageSerializerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Class AutowiringTest
- *
  * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class AutowiringTest extends WebTestCase
@@ -33,11 +31,9 @@ class AutowiringTest extends WebTestCase
     public function testAutowiring(): void
     {
         self::bootKernel();
-        $autowired = self::$container->get(Autowired::class);
+        $autowired = self::getContainer()->get(Autowired::class);
 
-        $this->assertInstanceOf(MessageFormatterInterface::class, $autowired->getFormatter());
         $this->assertInstanceOf(JsonMessageFormatter::class, $autowired->getFormatter());
-        $this->assertInstanceOf(MessageSerializerInterface::class, $autowired->getSerializer());
         $this->assertInstanceOf(ChainMessageSerializer::class, $autowired->getSerializer());
     }
 }

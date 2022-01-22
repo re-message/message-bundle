@@ -23,17 +23,17 @@
         }
     },
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.1",
 
-        "relmsg/message": "^1.0.1",
+        "relmsg/message": "^2.0",
 
-        "symfony/event-dispatcher": "^4.4|^5.0|^6.0",
-        "symfony/framework-bundle": "^4.4|^5.0|^6.0",
-        "symfony/yaml": "^4.4|^5.0|^6.0"
+        "symfony/event-dispatcher": "^6.0",
+        "symfony/framework-bundle": "^6.0",
+        "symfony/yaml": "^6.0"
     },
     "require-dev": {
-        "symfony/browser-kit": "^4.4|^5.0|^6.0",
-        "symfony/phpunit-bridge": "^4.4|^5.0|^6.0",
+        "symfony/browser-kit": "^6.0",
+        "symfony/phpunit-bridge": "^6.0",
 
         "roave/security-advisories": "dev-latest"
     },
@@ -41,6 +41,6 @@
         "sort-packages": false
     },
     "scripts": {
-        "test": "vendor/bin/simple-phpunit"
+        "test": "simple-phpunit"
     }
 }
