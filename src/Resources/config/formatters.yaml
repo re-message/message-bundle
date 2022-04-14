@@ -1,3 +1,10 @@
 services:
-    RM\Standard\Message\Format\JsonMessageFormatter:
+    _defaults:
+        autowire: true
+        autoconfigure: true
         public: false
+
+    RM\Standard\Message\Format\CacheableMessageFormatter:
+        decorates: RM\Standard\Message\Format\MessageFormatterInterface
+
+    RM\Standard\Message\Format\JsonMessageFormatter: null

@@ -21,8 +21,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class MessageBundle
- *
  * @author Oleg Kozlov <h1karo@relmsg.ru>
  */
 class MessageBundle extends Bundle
