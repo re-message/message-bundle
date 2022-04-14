@@ -21,7 +21,7 @@ use RM\Standard\Message\Format\MessageFormatterInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
 /**
  * @author Oleg Kozlov <h1karo@relmsg.ru>
@@ -37,9 +37,9 @@ class MessageExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('formatters.yaml');
-        $loader->load('serializers.yaml');
+        $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
+        $loader->load('formatters.php');
+        $loader->load('serializers.php');
 
         $formatter = $config['formatter'];
         if ($container->has($formatter)) {
