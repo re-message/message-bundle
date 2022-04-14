@@ -18,6 +18,7 @@ namespace RM\Bundle\MessageBundle\DependencyInjection;
 
 use RM\Bundle\MessageBundle\MessageBundle;
 use RM\Standard\Message\Format\JsonMessageFormatter;
+use RM\Standard\Message\Format\MessageFormatterInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -39,9 +40,18 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('formatter')
                     ->defaultValue(JsonMessageFormatter::class)
                     ->cannotBeEmpty()
+                    ->validate()
+                        ->ifTrue(fn ($value) => !is_a($value, MessageFormatterInterface::class, true))
+                        ->thenInvalid($this->getInvalidFormatterMessage())
+                    ->end()
                 ->end()
             ->end()
         ;
         return $treeBuilder;
+    }
+
+    protected function getInvalidFormatterMessage(): string
+    {
+        return sprintf('Formatter MUST implement %s.', MessageFormatterInterface::class);
     }
 }
