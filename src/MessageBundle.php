@@ -25,12 +25,10 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class MessageBundle extends Bundle
 {
-    public const NAME = 'message';
+    public const NAME = 'relmsg_message';
+
     public const SERIALIZER_TAG = self::NAME . '.serializer';
 
-    /**
-     * @inheritDoc
-     */
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new SerializerCompilerPass());
