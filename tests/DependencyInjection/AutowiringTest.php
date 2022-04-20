@@ -17,7 +17,6 @@
 namespace RM\Bundle\MessageBundle\Tests\DependencyInjection;
 
 use RM\Bundle\MessageBundle\Tests\Stub\Autowired;
-use RM\Standard\Message\Format\CacheableMessageFormatter;
 use RM\Standard\Message\Format\JsonMessageFormatter;
 use RM\Standard\Message\Serializer\ChainMessageSerializer;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -33,8 +32,7 @@ class AutowiringTest extends WebTestCase
         $autowired = self::getContainer()->get(Autowired::class);
 
         $formatter = $autowired->getFormatter();
-        $this->assertInstanceOf(CacheableMessageFormatter::class, $formatter);
-        $this->assertInstanceOf(JsonMessageFormatter::class, $formatter->getFormatter());
+        $this->assertInstanceOf(JsonMessageFormatter::class, $formatter);
 
         $serializer = $autowired->getSerializer();
         $this->assertInstanceOf(ChainMessageSerializer::class, $serializer);

@@ -14,9 +14,7 @@
  * file that was distributed with this source code.
  */
 
-use RM\Standard\Message\Format\CacheableMessageFormatter;
 use RM\Standard\Message\Format\JsonMessageFormatter;
-use RM\Standard\Message\Format\MessageFormatterInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $container) {
@@ -27,11 +25,6 @@ return static function (ContainerConfigurator $container) {
         ->autowire()
         ->autoconfigure()
         ->private()
-    ;
-
-    $services
-        ->set(CacheableMessageFormatter::class)
-        ->decorate(MessageFormatterInterface::class)
     ;
 
     $services
