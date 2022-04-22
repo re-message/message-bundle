@@ -16,7 +16,7 @@
 
 namespace RM\Bundle\MessageBundle\DependencyInjection;
 
-use RM\Bundle\MessageBundle\MessageBundle;
+use RM\Bundle\MessageBundle\RemessageMessageBundle;
 use RM\Standard\Message\Format\JsonMessageFormatter;
 use RM\Standard\Message\Format\MessageFormatterInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder(MessageBundle::NAME);
+        $treeBuilder = new TreeBuilder(RemessageMessageBundle::NAME);
         $root = $treeBuilder->getRootNode();
         $root
             ->addDefaultsIfNotSet()

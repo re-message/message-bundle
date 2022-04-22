@@ -14,7 +14,7 @@
  * file that was distributed with this source code.
  */
 
-use RM\Bundle\MessageBundle\MessageBundle;
+use RM\Bundle\MessageBundle\RemessageMessageBundle;
 use RM\Standard\Message\Serializer\ActionSerializer;
 use RM\Standard\Message\Serializer\ChainMessageSerializer;
 use RM\Standard\Message\Serializer\ErrorSerializer;
@@ -34,7 +34,7 @@ return static function (ContainerConfigurator $container) {
 
     $services
         ->instanceof(MessageSerializerInterface::class)
-        ->tag(MessageBundle::SERIALIZER_TAG)
+        ->tag(RemessageMessageBundle::SERIALIZER_TAG)
     ;
 
     $services

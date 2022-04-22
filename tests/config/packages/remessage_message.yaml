@@ -1,2 +1,2 @@
-message:
+remessage_message:
     formatter: RM\Standard\Message\Format\JsonMessageFormatter
