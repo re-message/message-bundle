@@ -1,14 +1,13 @@
 {
-    "name": "relmsg/message-bundle",
-    "description": "Relations Messenger Message Standard Bundle for Symfony",
+    "name": "remessage/message-bundle",
+    "description": "Message Standard Bundle for Symfony",
     "type": "symfony-bundle",
     "license": "Apache-2.0",
-    "homepage": "https://dev.relmsg.ru/packages/message-bundle",
+    "homepage": "https://dev.remessage.ru/packages/message-bundle",
     "authors": [
         {
             "name": "Oleg Kozlov",
-            "email": "h1karo@relmsg.ru",
-            "homepage": "https://rel.ms/h1karo",
+            "email": "h1karo@remessage.ru",
             "role": "Developer"
         }
     ],
@@ -25,7 +24,7 @@
     "require": {
         "php": ">=8.1",
 
-        "relmsg/message": "^2.2.0",
+        "remessage/message": "^2.2.1",
 
         "symfony/event-dispatcher": "^6.0",
         "symfony/framework-bundle": "^6.0",
