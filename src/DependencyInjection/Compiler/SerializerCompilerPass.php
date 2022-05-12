@@ -16,7 +16,7 @@
 
 namespace RM\Bundle\MessageBundle\DependencyInjection\Compiler;
 
-use RM\Bundle\MessageBundle\RemessageMessageBundle;
+use RM\Bundle\MessageBundle\RmMessageBundle;
 use RM\Standard\Message\Serializer\ChainMessageSerializer;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -33,7 +33,7 @@ class SerializerCompilerPass implements CompilerPassInterface
     public function process(ContainerBuilder $container): void
     {
         $chainSerializerDefinition = $container->getDefinition(ChainMessageSerializer::class);
-        $services = $container->findTaggedServiceIds(RemessageMessageBundle::SERIALIZER_TAG);
+        $services = $container->findTaggedServiceIds(RmMessageBundle::SERIALIZER_TAG);
         foreach ($services as $serviceId => $tags) {
             if ($serviceId === ChainMessageSerializer::class) {
                 continue;

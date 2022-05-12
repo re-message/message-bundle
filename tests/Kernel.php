@@ -18,7 +18,7 @@ namespace RM\Bundle\MessageBundle\Tests;
 
 use Exception;
 use Psr\Log\NullLogger;
-use RM\Bundle\MessageBundle\RemessageMessageBundle;
+use RM\Bundle\MessageBundle\RmMessageBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -49,7 +49,7 @@ class Kernel extends BaseKernel
     {
         return [
             new FrameworkBundle(),
-            new RemessageMessageBundle(),
+            new RmMessageBundle(),
         ];
     }
 

@@ -23,9 +23,9 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * @author Oleg Kozlov <h1karo@remessage.ru>
  */
-class RemessageMessageBundle extends Bundle
+class RmMessageBundle extends Bundle
 {
-    public const NAME = 'remessage_message';
+    public const NAME = 'rm_message';
 
     public const SERIALIZER_TAG = self::NAME . '.serializer';
 

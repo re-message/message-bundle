@@ -26,7 +26,7 @@ use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 /**
  * @author Oleg Kozlov <h1karo@remessage.ru>
  */
-class RemessageMessageExtension extends Extension
+class RmMessageExtension extends Extension
 {
     /**
      * @inheritDoc
