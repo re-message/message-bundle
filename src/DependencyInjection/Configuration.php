@@ -36,19 +36,20 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder(RmMessageBundle::NAME);
         $root = $treeBuilder->getRootNode();
-        $root
-            ->addDefaultsIfNotSet()
-            ->children()
-                ->scalarNode(self::PARAMETER_FORMATTER)
-                    ->defaultValue(JsonMessageFormatter::class)
-                    ->cannotBeEmpty()
-                    ->validate()
-                        ->ifTrue(fn ($value) => !is_a($value, MessageFormatterInterface::class, true))
-                        ->thenInvalid($this->getInvalidFormatterMessage())
-                    ->end()
-                ->end()
-            ->end()
+        $root->addDefaultsIfNotSet();
+
+        $children = $root->children();
+
+        $formatter = $children->scalarNode(self::PARAMETER_FORMATTER)
+            ->defaultValue(JsonMessageFormatter::class)
+            ->cannotBeEmpty()
         ;
+
+        $formatter->validate()
+            ->ifTrue(fn ($value) => !is_a($value, MessageFormatterInterface::class, true))
+            ->thenInvalid($this->getInvalidFormatterMessage())
+        ;
+
         return $treeBuilder;
     }
 
