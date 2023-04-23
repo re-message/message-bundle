@@ -41,7 +41,7 @@ class RmMessageExtension extends Extension
         $loader->load('formatters.php');
         $loader->load('serializers.php');
 
-        $formatter = $config['formatter'];
+        $formatter = $config[Configuration::PARAMETER_FORMATTER];
         if ($container->has($formatter)) {
             $container->setAlias(MessageFormatterInterface::class, $formatter);
         } else {

@@ -27,6 +27,8 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    public const PARAMETER_FORMATTER = 'formatter';
+
     /**
      * @inheritDoc
      */
@@ -37,7 +39,7 @@ class Configuration implements ConfigurationInterface
         $root
             ->addDefaultsIfNotSet()
             ->children()
-                ->scalarNode('formatter')
+                ->scalarNode(self::PARAMETER_FORMATTER)
                     ->defaultValue(JsonMessageFormatter::class)
                     ->cannotBeEmpty()
                     ->validate()
