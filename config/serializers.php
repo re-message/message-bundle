@@ -22,7 +22,7 @@ use RM\Standard\Message\Serializer\MessageSerializerInterface;
 use RM\Standard\Message\Serializer\ResponseSerializer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $container) {
+return static function (ContainerConfigurator $container): void {
     $services = $container->services();
 
     $defaults = $services->defaults();

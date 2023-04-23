@@ -25,8 +25,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 
 /**
- * Class Kernel
- *
  * @author Oleg Kozlov <h1karo@remessage.ru>
  */
 class Kernel extends BaseKernel
@@ -79,6 +77,7 @@ class Kernel extends BaseKernel
 
     /**
      * @inheritDoc
+     *
      * @throws Exception
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void

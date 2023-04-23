@@ -22,8 +22,6 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
- * Class TestCase
- *
  * @author Oleg Kozlov <h1karo@remessage.ru>
  */
 abstract class TestCase extends WebTestCase

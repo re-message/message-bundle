@@ -35,7 +35,7 @@ class SerializerCompilerPass implements CompilerPassInterface
         $delegatingSerializerDefinition = $container->getDefinition(DelegatingMessageSerializer::class);
         $services = $container->findTaggedServiceIds(RmMessageBundle::SERIALIZER_TAG);
         foreach ($services as $serviceId => $tags) {
-            if ($serviceId === DelegatingMessageSerializer::class) {
+            if (DelegatingMessageSerializer::class === $serviceId) {
                 continue;
             }
 

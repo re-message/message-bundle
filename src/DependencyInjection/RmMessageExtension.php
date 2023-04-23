@@ -30,6 +30,7 @@ class RmMessageExtension extends Extension
 {
     /**
      * @inheritDoc
+     *
      * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $container): void

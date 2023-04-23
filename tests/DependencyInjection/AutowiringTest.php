@@ -23,6 +23,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * @author Oleg Kozlov <h1karo@remessage.ru>
+ *
+ * @internal
  */
 class AutowiringTest extends WebTestCase
 {
@@ -32,9 +34,9 @@ class AutowiringTest extends WebTestCase
         $autowired = self::getContainer()->get(Autowired::class);
 
         $formatter = $autowired->getFormatter();
-        $this->assertInstanceOf(JsonMessageFormatter::class, $formatter);
+        self::assertInstanceOf(JsonMessageFormatter::class, $formatter);
 
         $serializer = $autowired->getSerializer();
-        $this->assertInstanceOf(DelegatingMessageSerializer::class, $serializer);
+        self::assertInstanceOf(DelegatingMessageSerializer::class, $serializer);
     }
 }
