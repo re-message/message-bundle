@@ -16,7 +16,7 @@
 
 use RM\Bundle\MessageBundle\RmMessageBundle;
 use RM\Standard\Message\Serializer\ActionSerializer;
-use RM\Standard\Message\Serializer\ChainMessageSerializer;
+use RM\Standard\Message\Serializer\DelegatingMessageSerializer;
 use RM\Standard\Message\Serializer\ErrorSerializer;
 use RM\Standard\Message\Serializer\MessageSerializerInterface;
 use RM\Standard\Message\Serializer\ResponseSerializer;
@@ -38,11 +38,11 @@ return static function (ContainerConfigurator $container) {
     ;
 
     $services
-        ->alias(MessageSerializerInterface::class, ChainMessageSerializer::class)
+        ->alias(MessageSerializerInterface::class, DelegatingMessageSerializer::class)
     ;
 
     $services
-        ->set(ChainMessageSerializer::class)
+        ->set(DelegatingMessageSerializer::class)
         ->set(ActionSerializer::class)
         ->set(ResponseSerializer::class)
         ->set(ErrorSerializer::class)

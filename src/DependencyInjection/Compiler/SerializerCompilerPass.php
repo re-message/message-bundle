@@ -17,7 +17,7 @@
 namespace RM\Bundle\MessageBundle\DependencyInjection\Compiler;
 
 use RM\Bundle\MessageBundle\RmMessageBundle;
-use RM\Standard\Message\Serializer\ChainMessageSerializer;
+use RM\Standard\Message\Serializer\DelegatingMessageSerializer;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -32,15 +32,15 @@ class SerializerCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container): void
     {
-        $chainSerializerDefinition = $container->getDefinition(ChainMessageSerializer::class);
+        $delegatingSerializerDefinition = $container->getDefinition(DelegatingMessageSerializer::class);
         $services = $container->findTaggedServiceIds(RmMessageBundle::SERIALIZER_TAG);
         foreach ($services as $serviceId => $tags) {
-            if ($serviceId === ChainMessageSerializer::class) {
+            if ($serviceId === DelegatingMessageSerializer::class) {
                 continue;
             }
 
             $reference = new Reference($serviceId);
-            $chainSerializerDefinition->addMethodCall('pushSerializer', [$reference]);
+            $delegatingSerializerDefinition->addMethodCall('pushSerializer', [$reference]);
         }
     }
 }
