@@ -52,3 +52,6 @@ jobs:
         with:
           name: Coverage report
           path: coverage
+
+      - name: Lint via PHP CS Fixer
+        run: composer run-script lint:ci

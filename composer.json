@@ -44,6 +44,7 @@
     },
     "scripts": {
         "lint": "php-cs-fixer fix --show-progress=dots",
+        "lint:ci": "php-cs-fixer fix --dry-run -v --show-progress=dots --diff",
         "test": "simple-phpunit"
     }
 }
