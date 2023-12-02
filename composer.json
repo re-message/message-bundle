@@ -43,6 +43,7 @@
         "sort-packages": false
     },
     "scripts": {
+        "lint": "php-cs-fixer fix --show-progress=dots",
         "test": "simple-phpunit"
     }
 }
