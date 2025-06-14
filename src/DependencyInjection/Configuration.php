@@ -46,7 +46,7 @@ class Configuration implements ConfigurationInterface
         ;
 
         $formatter->validate()
-            ->ifTrue(fn ($value) => !is_a($value, MessageFormatterInterface::class, true))
+            ->ifTrue(fn($value) => !is_a($value, MessageFormatterInterface::class, true))
             ->thenInvalid($this->getInvalidFormatterMessage())
         ;
 
