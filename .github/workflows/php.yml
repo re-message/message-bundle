@@ -1,4 +1,4 @@
-name: PHPUnit
+name: Composer and PHPUnit
 
 on:
   push:
@@ -8,33 +8,34 @@ on:
 
 jobs:
   test:
-    name: Testing on PHP ${{ matrix.php-versions }}
+    name: Testing on PHP ${{ matrix.php-version }}
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        php-versions: ['8.2', '8.3']
+        php-version: ['8.4', '8.5']
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring
           ini-values: opcache.jit_buffer_size=256M, opcache.jit=1235, pcre.jit=1
           coverage: pcov
 
       - name: Get Composer Cache Directory
-        id: composer-cache-dir
+        id: composer-cache
         run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Composer packages
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
-          path: ${{ steps.composer-cache-dir.outputs.dir }}
+          path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
@@ -48,10 +49,10 @@ jobs:
       - name: Run test suite
         run: composer run-script test
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
-          name: Coverage report
+          name: Coverage report (PHP ${{ matrix.php-version }})
           path: coverage
 
-      - name: Lint via PHP CS Fixer
+      - name: PHP CS Fixer
         run: composer run-script lint:ci
